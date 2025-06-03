@@ -10,10 +10,15 @@ const LivreSchema = new mongoose.Schema({
     unique: true,
     trim: true,
   },
+  // auteur: {
+  //   type: String,
+  //   required: true,
+  //   trim: true,
+  // },
   auteur: {
-    type: String,
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Auteur", 
     required: true,
-    trim: true,
   },
   annee_publication: {
     type: Number,

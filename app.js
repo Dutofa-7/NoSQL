@@ -8,6 +8,7 @@ import indexRouter from './routes/index.js';
 import pokemonRouter from './routes/pokemons.js';
 import trainerRouter from './routes/trainer.js'
 import livresRouter from './routes/livres.js';
+import auteurRouter from './routes/auteur.js';
 
 dotenv.config();
 connectDB();
@@ -22,6 +23,7 @@ app.use('/', indexRouter);
 app.use('/pokemons', pokemonRouter);
 app.use('/trainers', trainerRouter)
 app.use('/livres', livresRouter);
+app.use('/auteur', auteurRouter);
 
 app.use(function(req, res, next) {
   next(createError(404));
