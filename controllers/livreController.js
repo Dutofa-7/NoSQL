@@ -15,8 +15,10 @@ export const getLivres = async (req, res) => {
     const {
         page: queryPage,
         limit: queryLimit,
+        sort,
         ...queryFilters
     } = req.query;
+    
     const limit = parseInt(queryLimit) || 10;
     const page = parseInt(queryPage) || 1;
     const skip = (page - 1) * limit;
@@ -78,10 +80,19 @@ export const getLivres = async (req, res) => {
 
         }
     });
+
+    let sortOption = {};
+    if (sort === "titre_asc") sortOption = { titre: 1 };
+    else if (sort === "titre_desc") sortOption = { titre: -1 };
+
     try {
         const count = await Livre.countDocuments(filters);
         // const livres = await Livre.find(filters).skip(skip).limit(limit);
-        const livres = await Livre.find(filters);
+        const livres = await Livre.find(filters)
+            .sort(sortOption)
+            
+            .skip(skip)
+            .limit(limit);
         console.log('livres:', livres);
         res.json({
             data: livres,

@@ -19,7 +19,7 @@ const AuteurSchema = new mongoose.Schema({
       return this.aggregate([
         {
           $lookup: {
-            from: "livres", // nom de la collection MongoDB
+            from: "livres", 
             localField: "_id",
             foreignField: "auteur",
             as: "livres"
