@@ -6,11 +6,22 @@ dotenv.config();
 
 const livresExemples = [
   {
-    titre: "Le Petit Prince",
+    titre: "El Petit Prince",
     auteur: "Antoine de Saint-Exupéry",
     annee_publication: 1943,
     genre: ["Conte", "Littérature jeunesse", "Philosophie"],
     isbn: "978-2-07-040857-0",
+    editeur: "Gallimard",
+    edition: "collector",
+    langue: "espagnol",
+    resume: "La historia de un pequeño príncipe que viaja de planeta en planeta y encuentra adultos con comportamientos extraños, antes de llegar a la Tierra donde se hace amigo de un aviador.",
+  },
+    {
+    titre: "Le Petit Prince",
+    auteur: "Antoine de Saint-Exupéry",
+    annee_publication: 1943,
+    genre: ["Conte", "Littérature jeunesse", "Philosophie"],
+    isbn: "978-2-07-061275-5",
     editeur: "Gallimard",
     edition: "collector",
     langue: "français",

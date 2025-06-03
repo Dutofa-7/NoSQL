@@ -5,16 +5,21 @@ import {
   getLivreById,
   createLivre,
   updateLivre,
-  deleteLivre
+  deleteLivre,
+  livresParGenre,
+  livresParLangue
 } from '../controllers/livreController.js';
 
 const router = express.Router();
 
 router.get('/', getLivres);
-router.get('/search', searchLivres);
-router.get('/:id', getLivreById);
+// router.get('/search', searchLivres);
+// router.get('/:id', getLivreById);
 router.post('/', createLivre);
-router.patch('/:id', updateLivre);
-router.delete('/:id', deleteLivre);
+router.patch('/:_id', updateLivre);
+router.delete('/:_id', deleteLivre);
+// router.get('/genre/:genre', livresParGenre);
+// router.get('/langue/:langue', livresParLangue);
+
 
 export default router;

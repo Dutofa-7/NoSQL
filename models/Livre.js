@@ -1,5 +1,8 @@
 import mongoose from "mongoose";
 
+//filtre pour recherche sur au niveau des titre et du résumé, exemple si une personne cherche un livre qui parle
+//  de la sibérie, alors il faudrais recherché le mot "sibérie" dans le titre, puis si il n'est pas il faudrais 
+// si "sibérie" est présent dans le résumé
 const LivreSchema = new mongoose.Schema({
   titre: {
     type: String,
